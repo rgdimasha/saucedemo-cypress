@@ -18,7 +18,6 @@ describe('SauceDemo Product Page Tests', () => {
       cy.url({ timeout: TIMEOUT }).should('include', '/inventory.html')
     })
 
-    // AFTER session → manually go to product page
     cy.visit('/inventory.html', { timeout: TIMEOUT, failOnStatusCode: false })
   })
 
@@ -70,5 +69,42 @@ it('Verify user can navigate back to products page from product details page', (
   cy.contains('Products', { timeout: TIMEOUT })
     .should('be.visible')
 })
+
+
+//5
+it('Verify user can add a product to the cart and button updates accordingly', () => {
+
+  // Select a product
+  cy.contains('Sauce Labs Onesie', { timeout: TIMEOUT })
+    .should('be.visible')
+    .parents('.inventory_item_description')
+    .find('button')
+    .should('contain', 'Add to cart')
+    .click()
+
+  // Verify button changes to Remove
+  cy.contains('Sauce Labs Onesie', { timeout: TIMEOUT })
+    .parents('.inventory_item_description')
+    .find('button')
+    .should('contain', 'Remove')
+})
+
+//6
+it('Verify product sort dropdown options and selection functionality', () => {
+
+  cy.get('[data-test="product-sort-container"]', { timeout: TIMEOUT })
+    .should('be.visible');
+
+  // verify options
+  cy.get('[data-test="product-sort-container"] option', { timeout: TIMEOUT })
+    .should('have.length', 4);
+
+  // select option
+  cy.get('[data-test="product-sort-container"]', { timeout: TIMEOUT })
+    .select('Price (low to high)');
+
+  cy.get('[data-test="active-option"]', { timeout: TIMEOUT })
+    .should('contain', 'Price (low to high)');
+});
 
 })
