@@ -1,78 +1,73 @@
-# SauceDemo Cypress Automation Project
+# 🧪 SauceDemo Cypress Automation Project
 
 ## 📌 Project Overview
 
-This project contains automated end-to-end test cases for the SauceDemo web application using Cypress.
+This project contains automated test cases for the SauceDemo web application using Cypress.
 
-The goal of this project is to demonstrate UI testing, functional testing, and test automation best practices.
+The goal of this project is to practice UI testing and basic automation.
 
 ---
 
 ## 🚀 Tech Stack
 
-* Cypress
-* JavaScript
-* Node.js
+- Cypress  
+- JavaScript  
+- Node.js  
+- GitHub Actions (CI)
 
 ---
 
 ## 📂 Test Coverage
 
 ### 🔐 Login
-
-* Verify user login with valid credentials
+- Valid and invalid login scenarios  
+- Input validation (empty fields, incorrect credentials)  
 
 ### 🛍️ Product Page
+- Page load and UI validation  
+- Navigation between product list and details  
+- Add-to-cart functionality   
 
-* Verify products page is loaded
-* Verify product details navigation
-* Verify dropdown sorting functionality
-* Verify add to cart functionality
+### 🛒 Cart
+- Add and remove items  
+- Cart details verification  
+- Navigation back to shopping  
 
-### 🛒 Cart Page
+### 💳 Checkout
+- Complete end-to-end checkout flow   
 
-* Verify product added to cart
-* Verify product details in cart
-* Verify continue shopping functionality
-* Verify remove product from cart
+---
 
-### 💳 Checkout Flow
+## ⚙️ CI Integration
 
-* Verify checkout process flow (cart → checkout → form submission)
-* Validate user can proceed through checkout steps successfully
-* Verify navigation between checkout pages
+This project uses GitHub Actions for Continuous Integration.
+
+- Automatically runs Cypress tests on every push  
+- Helps ensure tests are passing and the project is stable   
 
 ---
 
 ## 🧠 Key Concepts Used
 
-* `cy.session()` for login reuse
-* Reusable test structure
-* UI-based assertions
-* Functional end-to-end testing
-* Cypress best practices (timeouts, selectors, structure)
+- cy.session() for reusable login  
+- UI-based assertions  
+- End-to-end test flow   
 
 ---
 
 ## ▶️ How to Run the Project
 
-1. Install dependencies:
-
-```bash
+### 1. Install dependencies
 npm install
-```
 
-2. Open Cypress:
-
-```bash
+### 2. Open Cypress Test Runner
 npx cypress open
-```
 
 ---
 
-## 📌 Application Under Test
+## 🌐 Application Under Test
 
-[https://www.saucedemo.com/](https://www.saucedemo.com/)
+https://www.saucedemo.com/
 
 ---
 
@@ -84,4 +79,7 @@ Devni Ranaweera
 
 ## ⭐ Notes
 
-This project was created as part of QA automation practice and portfolio building.
+- This project is created for QA automation practice   
+- Can be extended with:
+  - Page Object Model (POM)
+  - Advanced CI/CD pipelines  
